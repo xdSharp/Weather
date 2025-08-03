@@ -56,7 +56,7 @@ const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   // API ключ от OpenWeatherMap
-  const API_KEY: string = '44807d56ec09a01db29e6ace5458b4cc';
+  const API_KEY: string = process.env.REACT_APP_OPENWEATHER_API_KEY || '';
 
   // Переключаем тему (светлая/темная)
   const toggleTheme = (): void => {
@@ -71,6 +71,11 @@ const App: React.FC = () => {
   // Получаем погоду по названию города
   const getWeather = async (cityName: string): Promise<void> => {
     if (!cityName.trim()) return;
+    
+    if (!API_KEY) {
+      setError('API ключ не настроен. Проверьте файл .env');
+      return;
+    }
     
     setLoading(true);
     setError('');

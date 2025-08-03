@@ -31,7 +31,15 @@ cd weather-app
 npm install
 ```
 
-3. Запустите приложение в режиме разработки:
+3. Настройте API ключ:
+   - Создайте файл `.env` в корне проекта
+   - Добавьте ваш API ключ OpenWeatherMap:
+   ```
+   REACT_APP_OPENWEATHER_API_KEY=ваш_api_ключ_здесь
+   ```
+   - Получить бесплатный API ключ можно на [OpenWeatherMap](https://openweathermap.org/api)
+
+4. Запустите приложение в режиме разработки:
 ```bash
 npm start
 ```
@@ -73,7 +81,46 @@ npm run deploy
 
 ## API
 
-Приложение использует OpenWeatherMap API для получения данных о погоде. API ключ уже настроен в коде.
+Приложение использует OpenWeatherMap API для получения данных о погоде. 
+
+### Настройка API ключа
+
+1. Зарегистрируйтесь на [OpenWeatherMap](https://openweathermap.org/api)
+2. Получите бесплатный API ключ
+3. Создайте файл `.env` в корне проекта
+4. Добавьте ваш API ключ:
+   ```
+   REACT_APP_OPENWEATHER_API_KEY=ваш_api_ключ_здесь
+   ```
+
+**Важно:** Файл `.env` добавлен в `.gitignore` и не будет загружен в репозиторий для безопасности.
+
+## Утилиты
+
+### Завершение Node.js процессов
+
+В проекте есть несколько скриптов для быстрого завершения Node.js процессов:
+
+- **`kill-node.bat`** - простой батник для завершения всех Node.js, NPM и Yarn процессов
+- **`kill-node.ps1`** - PowerShell скрипт с цветным выводом
+- **`kill-node-advanced.bat`** - продвинутый батник с меню:
+  - Завершение всех Node.js процессов
+  - Завершение процессов на порту 3000/3001
+  - Просмотр активных процессов
+  - Завершение всех процессов разработки
+
+### Использование
+
+```bash
+# Простой батник
+kill-node.bat
+
+# PowerShell скрипт
+powershell -ExecutionPolicy Bypass -File kill-node.ps1
+
+# Продвинутый батник с меню
+kill-node-advanced.bat
+```
 
 ## Структура проекта
 
@@ -83,8 +130,13 @@ src/
 ├── App.css         # Стили приложения
 ├── index.tsx       # Точка входа
 ├── types/
-│   └── weather.ts  # TypeScript типы для погодных данных
-└── tsconfig.json   # Конфигурация TypeScript
+│   ├── weather.ts  # TypeScript типы для погодных данных
+│   └── env.d.ts    # Типы для переменных окружения
+├── tsconfig.json   # Конфигурация TypeScript
+├── .env            # Переменные окружения (не в репозитории)
+├── kill-node.bat   # Батник для завершения Node.js процессов
+├── kill-node.ps1   # PowerShell скрипт для завершения процессов
+└── kill-node-advanced.bat # Продвинутый батник с меню
 ```
 
 ## Особенности
