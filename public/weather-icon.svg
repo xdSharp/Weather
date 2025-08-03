@@ -1,0 +1,109 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Градиенты -->
+  <defs>
+    <!-- Небесный градиент -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Солнечный градиент -->
+    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6347;stop-opacity:0.8" />
+    </radialGradient>
+    
+    <!-- Облачный градиент -->
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#F0F8FF;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Дождевой градиент -->
+    <linearGradient id="rainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00BFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4169E1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Тень -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Фон с закругленными углами -->
+  <rect width="512" height="512" rx="100" fill="url(#skyGradient)"/>
+  
+  <!-- Солнце -->
+  <circle cx="120" cy="120" r="50" fill="url(#sunGradient)" filter="url(#shadow)"/>
+  
+  <!-- Лучи солнца -->
+  <g stroke="#FFD700" stroke-width="6" stroke-linecap="round" opacity="0.9">
+    <line x1="120" y1="50" x2="120" y2="30" />
+    <line x1="120" y1="210" x2="120" y2="190" />
+    <line x1="50" y1="120" x2="30" y2="120" />
+    <line x1="210" y1="120" x2="190" y2="120" />
+    <line x1="65" y1="65" x2="50" y2="50" />
+    <line x1="175" y1="175" x2="160" y2="160" />
+    <line x1="65" y1="175" x2="50" y2="160" />
+    <line x1="175" y1="65" x2="160" y2="50" />
+  </g>
+  
+  <!-- Большое облако -->
+  <g filter="url(#shadow)">
+    <ellipse cx="320" cy="140" rx="50" ry="35" fill="url(#cloudGradient)"/>
+    <ellipse cx="370" cy="140" rx="40" ry="30" fill="url(#cloudGradient)"/>
+    <ellipse cx="270" cy="140" rx="40" ry="30" fill="url(#cloudGradient)"/>
+    <ellipse cx="350" cy="120" rx="30" ry="25" fill="url(#cloudGradient)"/>
+    <ellipse cx="290" cy="120" rx="30" ry="25" fill="url(#cloudGradient)"/>
+  </g>
+  
+  <!-- Маленькое облако -->
+  <g filter="url(#shadow)" opacity="0.8">
+    <ellipse cx="380" cy="200" rx="35" ry="25" fill="url(#cloudGradient)"/>
+    <ellipse cx="410" cy="200" rx="25" ry="20" fill="url(#cloudGradient)"/>
+    <ellipse cx="350" cy="200" rx="25" ry="20" fill="url(#cloudGradient)"/>
+  </g>
+  
+  <!-- Капли дождя -->
+  <g filter="url(#shadow)">
+    <path d="M 320 180 Q 320 200 310 220 Q 320 240 330 220 Q 320 200 320 180 Z" fill="url(#rainGradient)"/>
+    <path d="M 340 190 Q 340 210 330 230 Q 340 250 350 230 Q 340 210 340 190 Z" fill="url(#rainGradient)"/>
+    <path d="M 360 185 Q 360 205 350 225 Q 360 245 370 225 Q 360 205 360 185 Z" fill="url(#rainGradient)"/>
+    <path d="M 300 190 Q 300 210 290 230 Q 300 250 310 230 Q 300 210 300 190 Z" fill="url(#rainGradient)"/>
+    <path d="M 380 195 Q 380 215 370 235 Q 380 255 390 235 Q 380 215 380 195 Z" fill="url(#rainGradient)"/>
+  </g>
+  
+  <!-- Термометр -->
+  <g filter="url(#shadow)">
+    <!-- Основание -->
+    <rect x="180" y="280" width="20" height="100" rx="10" fill="#FFFFFF" opacity="0.9"/>
+    <!-- Ртуть -->
+    <rect x="185" y="310" width="10" height="50" rx="5" fill="url(#rainGradient)"/>
+    <!-- Шкала -->
+    <line x1="210" y1="290" x2="215" y2="290" stroke="#333333" stroke-width="2"/>
+    <line x1="210" y1="310" x2="215" y2="310" stroke="#333333" stroke-width="2"/>
+    <line x1="210" y1="330" x2="215" y2="330" stroke="#333333" stroke-width="2"/>
+    <line x1="210" y1="350" x2="215" y2="350" stroke="#333333" stroke-width="2"/>
+    <!-- Нижняя часть -->
+    <circle cx="190" cy="390" r="18" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="190" cy="390" r="13" fill="url(#rainGradient)"/>
+  </g>
+  
+  <!-- Ветровые линии -->
+  <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <path d="M 240 320 Q 260 310 280 320 Q 300 330 320 320" fill="none"/>
+    <path d="M 240 340 Q 260 330 280 340 Q 300 350 320 340" fill="none"/>
+    <path d="M 240 360 Q 260 350 280 360 Q 300 370 320 360" fill="none"/>
+  </g>
+  
+  <!-- Снежинки (для разнообразия) -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <circle cx="420" cy="320" r="2"/>
+    <circle cx="440" cy="340" r="2"/>
+    <circle cx="400" cy="360" r="2"/>
+    <circle cx="430" cy="380" r="2"/>
+  </g>
+</svg> 

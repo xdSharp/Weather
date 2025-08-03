@@ -1,0 +1,10 @@
+{
+  "remote.portsAttributes": {
+    "3000": {
+      "label": "React App",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    }
+  },
+  "remote.localPortHost": "0.0.0.0"
+} 

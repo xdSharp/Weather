@@ -1,0 +1,21 @@
+# robots.txt для приложения погоды
+# https://www.robotstxt.org/robotstxt.html
+
+# Разрешаем всем ботам индексировать сайт
+User-agent: *
+Allow: /
+
+# Разрешаем индексацию всех страниц
+Allow: /index.html
+Allow: /manifest.json
+
+# Запрещаем индексировать служебные файлы
+Disallow: /favicon.ico
+Disallow: /robots.txt
+Disallow: /logo*.png
+
+# Указываем расположение sitemap (если есть)
+# Sitemap: https://yourdomain.com/sitemap.xml
+
+# Время задержки между запросами (в секундах)
+Crawl-delay: 1
